@@ -1,0 +1,90 @@
+{
+  "name": "dsh-ui-flow-mapper",
+  "version": "0.1.0",
+  "description": "UI Flow Mapper — 在 DSH 右侧栏画出软件的界面与交互跳转，导出一份机器可读的画布 JSON 给 AI 生成前后端。A flow-map editor for the DSH right sidebar: draw screens and their jumps, export a canvas JSON an AI can implement.",
+  "icon": "icon.svg",
+  "author": "李炜钰 <liweiyu507@users.noreply.github.com>",
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "plugin",
+    "ui",
+    "flow",
+    "flowmap",
+    "diagram",
+    "wireframe",
+    "prototype"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": { "default": "./lib/index.js" },
+    "./client": { "default": "./lib/client.js" },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.0-rc.2": "compatible"
+      }
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.4",
+    "react": "^18.3.1"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "files": [
+    "icon.svg",
+    "lib",
+    "src",
+    "tools",
+    "cordis.patch.yml",
+    "README.md",
+    "DESIGN.md",
+    "纲领.md",
+    "AGENTS.md",
+    "LICENSE",
+    "PROVENANCE.md"
+  ],
+  "scripts": {
+    "build": "node tools/build-client.mjs",
+    "test": "node tools/test-client.mjs",
+    "check:publish": "node tools/check-publish.mjs",
+    "prepack": "npm run build && npm test && npm run check:publish"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liweiyu507/dsh-ui-flow-mapper.git"
+  },
+  "homepage": "https://github.com/liweiyu507/dsh-ui-flow-mapper#readme",
+  "bugs": {
+    "url": "https://github.com/liweiyu507/dsh-ui-flow-mapper/issues"
+  }
+}

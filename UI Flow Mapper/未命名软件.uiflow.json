@@ -1,0 +1,155 @@
+{
+  "schema": "dsh-uiflow/canvas",
+  "version": "1.0.0",
+  "meta": {
+    "name": "未命名软件",
+    "description": "",
+    "createdAt": "2026-10-03T02:20:29.233Z",
+    "updatedAt": "2026-10-03T13:04:02.106Z",
+    "design": {
+      "defaultSize": {
+        "w": 1920,
+        "h": 1080
+      },
+      "responsive": false
+    }
+  },
+  "screens": [
+    {
+      "id": "screen_1",
+      "name": "首页",
+      "size": {
+        "w": 1920,
+        "h": 1080
+      },
+      "background": {
+        "fill": "#4a3f3f",
+        "image": null
+      },
+      "note": "",
+      "elements": [
+        {
+          "id": "elem_1",
+          "type": "interactive",
+          "shape": "rect",
+          "text": "",
+          "position": {
+            "x": 87,
+            "y": 162,
+            "w": 320,
+            "h": 432
+          },
+          "zIndex": 1,
+          "fixed": true,
+          "role": {
+            "preset": null,
+            "text": ""
+          },
+          "style": {
+            "fill": "#E9ECF1",
+            "radius": 0,
+            "opacity": 1,
+            "fontSize": 15,
+            "fontWeight": 400,
+            "strokeWidth": 1,
+            "align": "center"
+          }
+        },
+        {
+          "id": "elem_2",
+          "type": "decorative",
+          "shape": "ellipse",
+          "text": "",
+          "position": {
+            "x": 1000,
+            "y": 209,
+            "w": 565,
+            "h": 301
+          },
+          "zIndex": 2,
+          "fixed": false,
+          "role": {
+            "preset": null,
+            "text": ""
+          },
+          "style": {
+            "fill": "#38598f",
+            "radius": 999,
+            "opacity": 1,
+            "fontSize": 15,
+            "fontWeight": 400,
+            "strokeWidth": 1,
+            "align": "center"
+          }
+        }
+      ]
+    },
+    {
+      "id": "screen_2",
+      "name": "界面 2",
+      "size": {
+        "w": 1920,
+        "h": 1080
+      },
+      "background": {
+        "fill": "#FFFFFF",
+        "image": null
+      },
+      "note": "",
+      "elements": []
+    },
+    {
+      "id": "screen_3",
+      "name": "界面 3",
+      "size": {
+        "w": 1920,
+        "h": 1080
+      },
+      "background": {
+        "fill": "#ffffff",
+        "image": null
+      },
+      "note": "",
+      "elements": [
+        {
+          "id": "elem_1",
+          "type": "decorative",
+          "shape": "ellipse",
+          "text": "",
+          "position": {
+            "x": 878,
+            "y": 593,
+            "w": 772,
+            "h": 449
+          },
+          "zIndex": 1,
+          "fixed": false,
+          "role": {
+            "preset": null,
+            "text": "点击即可开始/取消夜间模式"
+          },
+          "style": {
+            "fill": "#6e9de7",
+            "radius": 999
+          }
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn_1",
+      "from": {
+        "screen": "screen_1",
+        "element": "elem_1"
+      },
+      "to": {
+        "screen": "screen_2"
+      },
+      "type": "navigate",
+      "overlay": null,
+      "note": "",
+      "createdAt": "2026-10-03T03:10:03.077Z"
+    }
+  ]
+}
